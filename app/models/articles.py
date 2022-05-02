@@ -1,4 +1,4 @@
-class Article:
+class Articles:
     '''
     Movie class to define Movie Objects
     '''
