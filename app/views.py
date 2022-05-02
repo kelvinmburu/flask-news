@@ -1,6 +1,6 @@
 from flask import redirect, render_template, url_for
 from app import app
-from .request import get_article_top_headlines
+from .request import get_article_everything, get_article_top_headlines
 
 # Views
 
