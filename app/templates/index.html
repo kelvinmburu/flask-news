@@ -1,22 +1,24 @@
+{% extends 'base.html'%}
 {% import 'macros.html' as macro%}
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        {% if title %}
-        <title> {{ title }}</title>
-        {% else %}
-        <title> Welcome to the best News Articles website </title>
-        {% endif %}
-    </head>
-    <body>
-                <!-- Article Top Headlines  -->
-                <h3> All Technology Articles </h3>
-                <ul>
-                   {% for tech_articles in technology %}
-                       <li>{{ tech_articles.title}}</li>
-                   {% endfor %}
-               </ul>
-    </body>
-</html>
+<!-- Content block -->
+{% block content %}
+
+<!-- Popular movie -->
+<h3> Popular Movies</h3>
+<ul>
+    {{ macro.displayArticlesList(popular)}}
+</ul>
+<!-- Upcoming movie  -->
+<h3> Upcoming Movies </h3>
+<ul>
+    {{ macro.displayArticlesList(upcoming)}}
+</ul>
+<!-- Now showing movie -->
+<h3>Now Showing</h3>
+<ul>
+    {{ macro.displayArticlesList(now_showing)}}
+</ul>
+
+
+{% endblock%}
