@@ -1,7 +1,8 @@
 from app import app
-import urllib.request
-import json
-from .models import articles
+import urllib.request,json
+
+from app.models import articles
+from .models import *
 
 Articles = articles.Articles
 
@@ -115,7 +116,7 @@ def process_results_sources(sources_list):
         name = source.get('name')
         url = source.get('url')
 
-        source_obj = Source(id, name, url)
+        source_obj = articles.Source(id, name, url)
         sources_results.append(source_obj)
 
     return sources_results
