@@ -1,3 +1,5 @@
+{% import 'macros.html' as macro%}
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -9,6 +11,12 @@
         {% endif %}
     </head>
     <body>
-
+                <!-- Article Top Headlines  -->
+                <h3> All Technology Articles </h3>
+                <ul>
+                   {% for tech_articles in technology %}
+                       <li>{{ tech_articles.title}}</li>
+                   {% endfor %}
+               </ul>
     </body>
 </html>
