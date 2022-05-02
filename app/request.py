@@ -1,5 +1,6 @@
 from app import app
-import urllib.request,json
+import urllib.request
+import json
 from .models import articles
 
 Articles = articles.Articles
@@ -10,11 +11,12 @@ api_key = app.config['NEWS_API_KEY']
 # Getting the movie base url
 base_url = app.config["NEWS_API_BASE_URL"]
 
+
 def get_article_top_headlines(category):
     '''
     Function that gets the json response to our url request
     '''
-    get_articles_url = base_url.format(category,api_key)
+    get_articles_url = base_url.format(category, api_key)
     print(get_articles_url)
 
     with urllib.request.urlopen(get_articles_url) as url:
@@ -27,8 +29,8 @@ def get_article_top_headlines(category):
             articles_results_list = get_articles_response['articles']
             articles_results = process_results(articles_results_list)
 
-
     return articles_results
+
 
 def process_results(articles_list):
     '''
@@ -41,7 +43,7 @@ def process_results(articles_list):
         articles_results: A list of movie objects
     '''
     articles_results = []
-    
+
     for article in articles_list:
         author = article.get('author')
         title = article.get('title')
@@ -50,10 +52,56 @@ def process_results(articles_list):
         urlToImage = article.get('urlToImage')
         publishedAt = article.get('publishedAt')
         content = article.get('content')
-      
 
         if urlToImage:
-            article_object = Articles(author,title,description,url,urlToImage,publishedAt,content)
+            article_object = Articles(
+                author, title, description, url, urlToImage, publishedAt, content)
             articles_results.append(article_object)
 
     return articles_results
+
+
+def get_article_everything(query):
+    get_articles_url = 'https://newsapi.org/v2/top-headlines?language=en&category={}&apiKey={}'.format(
+        query, api_key)
+    with urllib.request.urlopen(get_articles_url) as url:
+        get_articles_data = url.read()
+        get_articles_results = json.loads(get_articles_data)
+
+        articles_results = None
+
+        if get_articles_response['articles']:
+            articles_results_list = get_articles_response['articles']
+            articles_results = process_results(articles_results_list)
+
+        return articles_results
+
+
+def get_article_by_source(source_name):
+    get_source_article_url = 'https://newsapi.org/v2/top-headlines?language=en&category={}&apiKey={}'.format(
+        source_name, api_key)
+    print(get_source_article_url)
+    with urllib.request.urlopen(get_source_article_url) as url:
+        get_data = url.read()
+        get_response = json.loads(get_data)
+
+        results = None
+        if get_response['articles']:
+            results_list = get_response['articles']
+            results = process_results[results_list]
+
+        return results
+
+
+def get_sources():
+    get_sources_url = 'https://newsapi.org/v2/top-headlines?language=en&category={}&apiKey={}'.format(
+        api_key)
+    with urllib.request.urlopen(get_sources_url) as url:
+        get_sources_data = url.read()
+        get_sources_response = json.loads(get_sources_data)
+
+        if get_sources_response['sources']:
+            sources_results_list = get_sources_response['sources']
+            sources_results = process_results_sources(sources_results_list)
+
+        return sources_results
