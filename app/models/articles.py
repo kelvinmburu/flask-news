@@ -12,3 +12,11 @@ class Articles:
         self.publishedAt = publishedAt
         self.content = content
     pass
+
+class Source:
+    sources_list = []
+    def __init__(self,id,name,url):
+        self.id = id
+        self.name = name
+        self.url = url
+    pass
