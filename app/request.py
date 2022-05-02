@@ -94,7 +94,7 @@ def get_article_by_source(source_name):
 
 
 def get_sources():
-    get_sources_url = 'https://newsapi.org/v2/top-headlines?language=en&category={}&apiKey={}'.format(
+    get_sources_url = 'https://newsapi.org/v2/sources?&apiKey={}'.format(
         api_key)
     with urllib.request.urlopen(get_sources_url) as url:
         get_sources_data = url.read()
