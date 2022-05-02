@@ -66,7 +66,7 @@ def get_article_everything(query):
         query, api_key)
     with urllib.request.urlopen(get_articles_url) as url:
         get_articles_data = url.read()
-        get_articles_results = json.loads(get_articles_data)
+        get_articles_response = json.loads(get_articles_data)
 
         articles_results = None
 
@@ -105,3 +105,33 @@ def get_sources():
             sources_results = process_results_sources(sources_results_list)
 
         return sources_results
+
+
+def process_results_sources(sources_list):
+    sources_results = []
+
+    for source in sources_list:
+        id = source.get('id')
+        name = source.get('name')
+        url = source.get('url')
+
+        source_obj = Source(id, name, url)
+        sources_results.append(source_obj)
+
+    return sources_results
+
+
+def search_article(article):
+    search_article_url = 'https://newsapi.org/v2/top-headlines?language=en&category={}&apiKey={}'.format(
+        article, api_key)
+    with urllib.request.urlopen(search_article_url) as url:
+        search_article_data = url.read()
+        search_article_response = json.loads(search_article_data)
+
+        search_article_results = None
+
+        if search_article_response['articles']:
+            search_article_list = search_article_response['articles']
+            search_article_results = process_results(search_article_list)
+
+        return search_article_results
