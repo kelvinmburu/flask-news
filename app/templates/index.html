@@ -9,7 +9,7 @@
         <div class="row tech-article-div">
             <div class="col-md-6">
                 <a href="/" id="main-heading">
-                    <h1>Tech News</h1>
+                    <h1>What's Trending in Tech?</h1>
                 </a>
                 <h2>
                     <a href="{{tech_articles[1].url}}" class="tech-article-title">
@@ -29,14 +29,14 @@
     <div class="main-section">
         <div class="row">
             <div class="col-md-3 main-section-one">
-                <h4 class="main-heading source-heading text-center">News Sources Available</h4>
+                <h4 class="main-heading source-heading text-center">Our News Sources</h4>
                 <ul>
                     {% for source in all_sources[0:30] %}
                     <li><a href="/source/{{source.id}}" class="source-title">{{source.name}}</a></li>
                     {% endfor %}
                     <br>
                     <div>
-                        <p><a href="/sources" class="more-sources">Click to view more sources</a></p>
+                        <p><a href="/sources" class="more-sources">See More Sources</a></p>
                     </div>
                 </ul>
             </div>
@@ -51,7 +51,7 @@
                             <div class="card-body main-section-two-card-body">
                                 <h5 class="card-title main-section-two-title">{{article.title}}</h5>
                                 <p class="card-text">{{article.description|truncate(100)}}
-                                    <a href="{{article.url}}" class="read-article">read article</a>
+                                    <a href="{{article.url}}" class="read-article">Read Article</a>
                                 </p>
                             </div>
                         </div>
@@ -62,4 +62,5 @@
         </div>
     </div>
 </div>
+{% include 'footer.html' %}
 {% endblock %}
