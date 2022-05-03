@@ -52,7 +52,7 @@ def business():
 
 @main.route('/technology')
 def technology():
-    technology_articles = get_article_everything('technology')
+    technology_articles = get_article_top_headlines('technology')
 
     return render_template('technology.html', technology_articles=technology_articles)
 
