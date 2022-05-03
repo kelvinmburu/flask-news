@@ -11,10 +11,10 @@ This is a Flask application that helps users list and preview news articles from
 ![GitHub Language Count](https://img.shields.io/github/languages/count/kelvinmburu/flask-news)
 ![GitHub Commit Activity Count](https://img.shields.io/github/commit-activity/w/kelvinmburu/flask-news)
 
-# Contribution
+## Contribution
 - [Kelvin Mburu](https://github.com/kelvinmburu) 📖
 
-# Technology Used
+## Technology Used
 
 1. Python3
 2. Flask version 2
@@ -23,7 +23,7 @@ This is a Flask application that helps users list and preview news articles from
 5. C
 6. Shell
 
-# Project Requirements & Prerequisites
+## Project Requirements & Prerequisites
 
 1. IDE of Choice
 2. Python3
@@ -32,7 +32,7 @@ This is a Flask application that helps users list and preview news articles from
 * Please ensure you're working from a Windows/MacOS/Linux
 * Install Flask through `pip flask install`
 
-# Project Setup and Installation
+## Project Setup and Installation
 
 1. Proceed to this [link](https://github.com/kelvinmburu/flask-news) and clone the repository.
 2. Extract the folder and `cd` to the folder on your terminal or your prefered IDE
@@ -42,7 +42,7 @@ This is a Flask application that helps users list and preview news articles from
 6. In the terminal, and within the project folder, run `chmod +x start.sh` and `./start.sh` to start the project.
 7. View the application on your browser on `http://127.0.0.1:5000`. If you have another project running on another port, use `flask run --host 0.0.0.0 --port 5001` to switch to a new port; You can use a different port number.
 
-# Behavior Driven Development (BDD)
+## Behavior Driven Development (BDD)
 
 The BDD focuses on how a user interacts with the application.
 
@@ -54,7 +54,7 @@ At a minimum, this is what the user should experience in the application:
 * If a user clicks on a particular article link, they are redirected to the article's page where they can read it.
 * Navigating to a different news section such as `Kenya` allows a user to read articles from that particular country.
 
-# Project Contribution or Development:
+## Project Contribution or Development:
 
 To contribute to this project, please follow the following steps:
 * Fork this repository.
@@ -65,7 +65,7 @@ To contribute to this project, please follow the following steps:
 
 Please see the GitHub documentation on [Creating a Pull Request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request)
 
-# Known Issues & bugs
+## Known Issues & bugs
 
 To improve this project or fix a bug, please reach me via Email:
 * [mburuhkelvin@gmail.com](mailto:mburuhkelvin@gmail.com)
@@ -73,6 +73,6 @@ To improve this project or fix a bug, please reach me via Email:
 
 Alternatively, you can contact me via [LinkedIn](https://www.linkedin.com/in/kelvin-m-560a25135/)
 
-# License
+## License
 
 Please view the project [LICENSE](LICENSE) for more information.
