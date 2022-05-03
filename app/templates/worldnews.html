@@ -1,1 +1,19 @@
-<h1> Hello news {{ id }} </h1>
+{% extends 'base.html' %}
+{% import 'macros.html' as macro%}
+
+{% block content %}
+<div class="page-articles-display">
+    <h2 class="article-main-headings text-center">WORLD NEWS</h2>
+    <div class="page-articles">
+        <div class="row">
+            <div class="col-md-4 main-articles">
+                {{ macro.displayArticlesListTwo(worldnews) }}
+            </div>
+            <div class="col-md-8 sub-articles">
+                {{ macro.displayArticlesList(worldnews) }}
+            </div>
+        </div>
+    </div>
+</div>
+{% include 'footer.html' %}
+{% endblock %}
