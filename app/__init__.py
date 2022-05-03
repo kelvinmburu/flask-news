@@ -23,7 +23,7 @@ def create_app(config_name):
     from .request import configure_request
     configure_request(app)
 
-    # from app.main import error
-    # from app.main import views
+    from app.main import error
+    from app.main import views
 
     return app
