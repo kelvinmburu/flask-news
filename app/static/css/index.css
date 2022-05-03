@@ -7,7 +7,7 @@ body {
 }
 
 .navbar {
-    background-color:aliceblue;
+    background-color: aliceblue;
 }
 
 .nav-item {
@@ -23,7 +23,7 @@ a {
     transition: all 0.5s ease;
 }
 
-a:after {    
+a:after {
     content: "";
     position: absolute;
     background-color: #3cb1ff;
@@ -32,13 +32,58 @@ a:after {
     left: 0;
     bottom: 2px;
     transition: 0.3s;
-  }
+}
 
-  a:hover:after { 
+a:hover:after {
     width: 100%;
-  }
+}
 
 .search-form {
     padding-top: 1.2vh;
     padding-left: 25px;
+}
+
+/* Tech articles section */
+.main-heading {
+    font-family: 'Playfair Display', serif;
+    font-weight: bolder;
+}
+
+#main-heading {
+    font-family: 'Playfair Display', serif;
+    font-weight: bolder;
+    color: #EEEEEE;
+}
+
+.display-tech-articles {
+    margin-top: 1vh;
+    color: #EEEEEE !important;
+    background-image: url(assets/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.tech-article-div {
+    padding: 2vh;
+}
+
+.other-tech-articles {
+    float: right;
+}
+
+.tech-article-title {
+    text-decoration: none;
+    color: #EEEEEE !important;
+}
+
+.tech-article-title:hover {
+    color: #EEEEEE !important;
+}
+
+.tech-article {
+    color: #EEEEEE !important;
+}
+
+.tech-article:hover {
+    font-size: 110%;
 }
