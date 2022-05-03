@@ -8,24 +8,26 @@
     <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
 {% endblock %}
 
-<!-- Content block -->
 {% block content %}
+<div class="main-page">
+    <div class="display-tech-articles">
+        <div class="row tech-article-div">
+            <div class="col-md-6">
+                <a href="/" id="main-heading"><h1>Tech News</h1></a>
+                <h2>
+                    <a href="{{tech_articles[1].url}}" class="tech-article-title">
+                        {{tech_articles[1].title}}
+                    </a>
+                </h2>
+                <p class="tech-article-desc">{{tech_articles[1].description|truncate(200)}}</p>
+            </div>
+            <div class="col-md-6 other-tech-articles">
+                {% for article in tech_articles[5:10] %}
+                <p><a href="{{article.url}}" class="tech-article">{{article.title}}</a></p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 
-<!-- Popular movie -->
-<h3> Popular Movies</h3>
-<ul>
-    {{ macro.displayArticlesList(popular)}}
-</ul>
-<!-- Upcoming movie  -->
-<h3> Upcoming Movies </h3>
-<ul>
-    {{ macro.displayArticlesList(upcoming)}}
-</ul>
-<!-- Now showing movie -->
-<h3>Now Showing</h3>
-<ul>
-    {{ macro.displayArticlesList(now_showing)}}
-</ul>
-
-
-{% endblock%}
+    
+    {% endblock %}
