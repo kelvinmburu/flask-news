@@ -36,7 +36,7 @@ This is a Flask application that helps users list and preview news articles from
 
 1. Proceed to this [link](https://github.com/kelvinmburu/flask-news) and clone the repository.
 2. Extract the folder and `cd` to the folder on your terminal or your prefered IDE
-3. In the terminal, create a virtual/flask environment: `python3 -m venv virtual` and activate it through `source virtual/bin/activate`. In the case of flask, please use `source flask/binactivate`.
+3. In the terminal, create a virtual/flask environment: `python3 -m venv virtual` and activate it through `source virtual/bin/activate`. In the case of flask, please use `source flask/bin/activate`.
 4. Install all dependencies from the `requirements.txt` file; use `pip` to install needed dependencies.
 5. In the project folder, create a `start.sh` file which acts as a server at runtime.
 6. In the terminal, and within the project folder, run `chmod +x start.sh` and `./start.sh` to start the project.
