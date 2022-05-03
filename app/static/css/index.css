@@ -87,3 +87,78 @@ a:hover:after {
 .tech-article:hover {
     font-size: 110%;
 }
+
+/* Styling for the main section */
+.card {
+    height: 35rem;
+    width: auto;
+    background-color: white;
+    margin-top: 2vh;
+}
+
+.card-img-top {
+    height: 50%;
+    width: 100%;
+}
+
+.main-section {
+    padding: 0 2vh;
+    background-color: #06113C;
+}
+
+.main-section-two {
+    background-color: #EEEEEE;
+    padding: 2vh;
+}
+
+.main-section-two-title {
+    font-weight: 800;
+}
+
+.main-section-two-card-body {
+    padding: 1vh;
+    height: 50%;
+}
+
+.read-article {
+    font-weight: 700;
+    color: #06113C;
+}
+
+/* Sources styling */
+.main-section-one {
+    padding: 2vh;
+}
+
+.source-title {
+    font-weight: 500;
+    font-size: large;
+    color: #EEEEEE;
+    text-decoration: none;
+    padding-right: 5vh;
+}
+
+.source-title:hover {
+    font-weight: 500;
+    font-size: larger;
+    color: #FF8C32;
+}
+
+.source-heading {
+    color: #FF8C32;
+    font-weight: bolder;
+}
+
+.more-sources {
+    color: #FF8C32;
+    font-weight: bolder;
+}
+
+.sources-display-all {
+    padding: 1vh 6vh;
+    background-color: #06113C;
+}
+
+.display-source-articles {
+    padding: 1vh 6vh;
+}
