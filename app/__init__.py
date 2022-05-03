@@ -15,7 +15,7 @@ def create_app(config_name):
     # Initializing Flask Extensions
     bootstrap = Bootstrap(app)
 
-    from app import error
-    from app import views
+    from app.main import error
+    from app.main import views
 
     return app
