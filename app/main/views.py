@@ -2,6 +2,7 @@ from flask import redirect, render_template, url_for
 from . import main
 from ..request import *
 from ..models import *
+from app import request
 
 # Views
 
