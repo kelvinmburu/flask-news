@@ -1,12 +1,12 @@
 from flask import redirect, render_template, url_for
-from app import app
-from ..request import get_article_by_source, get_article_everything, get_article_top_headlines, get_sources, search_article
-from app import request
+from . import main
+from ..request import *
+from ..models import *
 
 # Views
 
 
-@app.route('/')
+@main.route('/')
 def home():
     '''
     View root page function that returns the index page and its data
@@ -24,7 +24,7 @@ def home():
     return render_template('index.html', tech_articles=tech_articles, all_articles=all_articles, all_sources=all_sources)
 
 
-@app.route('/worldnews')
+@main.route('/worldnews')
 def worldnews():
     '''
     View news section that returns the movie details and its data.
@@ -35,41 +35,41 @@ def worldnews():
     return render_template('worldnews.html', worldnews=worldnews)
 
 
-@app.route('/kenya')
+@main.route('/kenya')
 def kenya():
     kenya_articles = get_article_everything('kenya')
 
     return render_template('kenya.html', kenya_articles=kenya_articles)
 
 
-@app.route('/business')
+@main.route('/business')
 def business():
     business_articles = get_article_everything('business')
 
     return render_template('business.html', business_articles=business_articles)
 
 
-@app.route('/technology')
+@main.route('/technology')
 def technology():
     technology_articles = get_article_everything('technology')
 
     return render_template('technology.html', technology_articles=technology_articles)
 
 
-@app.route('/health')
+@main.route('/health')
 def health():
     health_articles = get_article_everything('health')
 
     return render_template('health.html', health_articles=health_articles)
 
 
-@app.route('/sources')
+@main.route('/sources')
 def sources():
     all_sources = get_sources('sources')
     
     return render_template('sources.html', all_sources=all_sources)
 
-@app.route('/search/<article>')
+@main.route('/search/<article>')
 def search(article):
     searched_articles_list = article.split(" ")
     article_name_format = "+".join(searched_articles_list)
@@ -79,7 +79,7 @@ def search(article):
     
     return render_template('search.html',searched_articles=searched_articles,heading=heading)
 
-@app.route('/source/<source_name>')
+@main.route('/source/<source_name>')
 def source(source_name):
     article_display = get_article_by_source(source_name)
     title = source_name.upper()
