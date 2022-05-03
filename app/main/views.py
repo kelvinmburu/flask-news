@@ -1,8 +1,8 @@
-from flask import redirect, render_template, url_for
+from flask import render_template,redirect, request,url_for
 from . import main
 from ..request import *
 from ..models import *
-from app import request
+
 
 # Views
 
@@ -45,21 +45,21 @@ def kenya():
 
 @main.route('/business')
 def business():
-    business_articles = get_article_everything('business')
+    business_articles = get_article_top_headlines('business')
 
     return render_template('business.html', business_articles=business_articles)
 
 
-@main.route('/technology')
-def technology():
-    technology_articles = get_article_top_headlines('technology')
+@main.route('/tech')
+def tech():
+    tech_news = get_article_top_headlines('technology')
 
-    return render_template('technology.html', technology_articles=technology_articles)
+    return render_template('technology.html', tech_news=tech_news)
 
 
 @main.route('/health')
 def health():
-    health_articles = get_article_everything('health')
+    health_articles = get_article_top_headlines('health')
 
     return render_template('health.html', health_articles=health_articles)
 
