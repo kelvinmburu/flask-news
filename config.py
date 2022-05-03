@@ -1,21 +1,18 @@
+import os
+
 class Config:
     '''
     General configuration parent class
     '''
     
     NEWS_API_BASE_URL = 'https://newsapi.org/v2/top-headlines?language=en&category={}&apiKey={}'
-    pass
+    NEWS_API_KEY = os.environ.get('NEWS_API_KEY')
+    SECRET_KEY = os.environ.get('SECRET_KEY')
 
 
 
 class ProdConfig(Config):
-    '''
-    Production  configuration child class
-
-    Args:
-        Config: The parent configuration class with General configuration settings
-    '''
-    NEWS_API_KEY = 'c17afabafba441d7b8112d9d2614aeb7'
+    pass
 
 
 class DevConfig(Config):
@@ -27,3 +24,8 @@ class DevConfig(Config):
     '''
 
     DEBUG = True
+    
+config_options = {
+    'development':DevConfig,
+    'production':ProdConfig
+}
