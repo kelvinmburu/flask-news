@@ -1,10 +1,9 @@
-from app import app
+#from app import app
+from concurrent.futures import process
 import urllib.request,json
 
-from app.models import articles
+# from app.models import articles
 from .models import *
-
-Articles = articles.Articles
 
 # Getting api key
 api_key = None
@@ -24,8 +23,6 @@ def get_article_top_headlines(category):
     Function that gets the json response to our url request
     '''
     get_articles_url = base_url.format(category, api_key)
-    print(get_articles_url)
-
     with urllib.request.urlopen(get_articles_url) as url:
         get_articles_data = url.read()
         get_articles_response = json.loads(get_articles_data)
@@ -61,7 +58,7 @@ def process_results(articles_list):
         content = article.get('content')
 
         if urlToImage:
-            article_object = Articles(
+            article_object = Article(
                 author, title, description, url, urlToImage, publishedAt, content)
             articles_results.append(article_object)
 
@@ -69,7 +66,7 @@ def process_results(articles_list):
 
 
 def get_article_everything(query):
-    get_articles_url = 'https://newsapi.org/v2/top-headlines?language=en&category={}&apiKey={}'.format(
+    get_articles_url = 'https://newsapi.org/v2/everything?q={}&from=2022-04-30&language=en&sortBy=publishedAt&apiKey={}'.format(
         query, api_key)
     with urllib.request.urlopen(get_articles_url) as url:
         get_articles_data = url.read()
@@ -101,7 +98,7 @@ def get_article_by_source(source_name):
 
 
 def get_sources():
-    get_sources_url = 'https://newsapi.org/v2/sources?&apiKey={}'.format(
+    get_sources_url = 'https://newsapi.org/v2/top-headlines/sources?apiKey='.format(
         api_key)
     with urllib.request.urlopen(get_sources_url) as url:
         get_sources_data = url.read()
@@ -122,7 +119,7 @@ def process_results_sources(sources_list):
         name = source.get('name')
         url = source.get('url')
 
-        source_obj = articles.Source(id, name, url)
+        source_obj = Source(id, name, url)
         sources_results.append(source_obj)
 
     return sources_results
