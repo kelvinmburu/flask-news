@@ -66,7 +66,7 @@ def health():
 
 @main.route('/sources')
 def sources():
-    all_sources = get_sources('sources')
+    all_sources = get_sources()
     
     return render_template('sources.html', all_sources=all_sources)
 
