@@ -61,7 +61,7 @@ To contribute to this project, please follow the following steps:
 * Create a branch: `git checkout -b <branch_name>`.
 * Make your changes and commit them: `git commit -m '<commit_message>'`
 * Push to the original branch: `git push origin <flask-news>/<main>`
-* Create the pull request.
+* Create the pull request and wait for a PR review
 
 Please see the GitHub documentation on [Creating a Pull Request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request)
 
